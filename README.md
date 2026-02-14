@@ -1,8 +1,7 @@
 # Visual Tools & Interfaces for Decision-Making
 
 A curated collection examining how dashboards, charts, and visualization systems influence clarity, trust, and perceived risk in data-heavy environments.
-
-**Built by Andres Solis**  
+ 
 Static web project · HTML · CSS · JavaScript
 
 ---
@@ -29,12 +28,12 @@ The collection is organized into four sections:
 
 ---
 
-## Design & Implementation 💘
+## ✨ Design & Implementation 💘
 
 - Card-based layout for readability  
 - Tag system for fast scanning  
 - Navigation w/ active section detection  
-- Valentine-inspired design system (maroon + pink accents)  
+- **Valentine**-inspired design system (maroon + pink accents)  
 - Fully responsive mobile behavior  
 
 Built using:
