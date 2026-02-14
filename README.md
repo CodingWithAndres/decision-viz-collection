@@ -29,7 +29,7 @@ The collection is organized into four sections:
 
 ---
 
-## Design & Implementation
+## Design & Implementation 💘
 
 - Card-based layout for readability  
 - Tag system for fast scanning  
