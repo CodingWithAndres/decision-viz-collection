@@ -403,6 +403,71 @@ nav{
   outline: 3px solid rgba(38,255,230,.60);
 }
 
+/* =========================
+   Mobile
+   ========================= */
+
+/* keep nav from feeling huge on small screens */
+@media (max-width: 520px){
+  .wrap{ padding:18px 14px 56px; }
+
+  h1{ font-size: 30px; line-height: 1.12; }
+  .sub{ font-size: 15px; line-height: 1.65; }
+
+  /* meta pills stack nicely */
+  .meta{ gap:8px; }
+  .meta span{ padding:7px 9px; font-size:13px; }
+
+  /* nav: allow horizontal scroll instead of wrapping into 2+ rows */
+  .navinner{
+    padding:0 14px;
+    gap:8px;
+    align-items:flex-start;
+  }
+
+  .navlinks{
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap:8px;
+    padding-bottom:6px;
+    scrollbar-width: none; /* Firefox */
+  }
+  .navlinks::-webkit-scrollbar{ display:none; }
+
+  .btn{
+    padding:9px 10px;
+    font-size:13px;
+    flex:0 0 auto;
+  }
+
+  .rightnote{ display:none; } /* reduces clutter */
+
+  /* cards readability */
+  .card{ padding:14px 14px 12px; }
+  .title{ font-size:15px; }
+  .small{ font-size:13.5px; line-height:1.6; }
+
+  /* badge + title wrap more naturally */
+  .toprow{
+    flex-direction: column;
+    align-items:flex-start;
+    gap:8px;
+  }
+}
+
+/* nicer anchor scrolling so nav doesn't cover headings */
+section{ scroll-margin-top: 92px; }
+@media (max-width: 520px){
+  section{ scroll-margin-top: 110px; }
+}
+
+/* prevent long URLs from blowing up layout */
+.url a{
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+
   </style>
 </head>
 
