@@ -8,26 +8,26 @@
 
   <style>
     :root{
-      /* palette */
-      --sage:#CACAAA;   /* page background */
-      --apricot:#EEC584;/* accent */
-      --tan:#C8AB83;    /* cards */
-      --cyan:#55868C;   /* links + highlight */
-      --rose:#7F636E;   /* chips + secondary accent */
+  /* Valentine palette */
+  --maroon:#820933;   /* links */
+  --pink:#D84797;     /* secondary accent */
+  --ice:#D2FDFF;      /* page background */
+  --sky:#3ABEFF;      /* UI highlight */
+  --aqua:#26FFE6;     /* glow / subtle accents */
 
-      /* UI tokens */
-      --ink:#161513;          /* primary text */
-      --muted:rgba(22,21,19,.72);
-      --line:rgba(22,21,19,.14);
-      --soft:rgba(255,255,255,.35);
+  /* UI tokens */
+  --ink:#161513;           
+  --muted:rgba(22,21,19,.72);
+  --line:rgba(22,21,19,.14);
+  --soft:rgba(255,255,255,.40);
 
-      --radius:18px;
-      --shadow: 0 14px 34px rgba(22,21,19,.18);
-      --max: 1020px;
+  --radius:18px;
+  --shadow: 0 14px 34px rgba(22,21,19,.18);
+  --max: 1020px;
 
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-    }
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
 
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -35,25 +35,28 @@
       margin:0;
       font-family:var(--sans);
       color:var(--ink);
-      background: var(--sage);
+      background: var(--ice);
     }
 
     /* subtle depth w/o gradients/banding */
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      background:
-        radial-gradient(900px 420px at 50% -10%, rgba(238,197,132,.35), transparent 65%),
-        radial-gradient(700px 360px at 10% 0%, rgba(85,134,140,.18), transparent 62%);
-      opacity:.55;
-      filter: blur(10px);
-      z-index:-1;
-    }
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(900px 420px at 50% -10%, rgba(216,71,151,.30), transparent 65%),
+    radial-gradient(700px 360px at 10% 0%, rgba(58,190,255,.22), transparent 62%),
+    radial-gradient(700px 360px at 95% 10%, rgba(38,255,230,.16), transparent 60%);
+  opacity:.65;
+  filter: blur(10px);
+  z-index:-1;
+}
 
-    a{color:var(--cyan); text-decoration:none}
+    a{color:var(--maroon); text-decoration:none}
     a:hover{text-decoration:underline}
+
+    body{ background: var(--ice); }
 
     .wrap{
       max-width:var(--max);
@@ -116,7 +119,9 @@
       z-index:10;
       margin-top:18px;
       padding:10px 0;
-      background: rgba(202,202,170,.82); /* sage glass */
+    }
+      nav{
+      background: rgba(210,253,255,.84); /* ice glass */
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
@@ -150,16 +155,16 @@
     }
 
     .btn:hover{
-      text-decoration:none;
-      border-color: rgba(85,134,140,.55);
-      background: rgba(85,134,140,.12);
-      transform: translateY(-1px);
+    text-decoration:none;
+    border-color: rgba(58,190,255,.65);
+    background: rgba(58,190,255,.14);
+    transform: translateY(-1px);
     }
 
     .btn.active{
-      border-color: rgba(85,134,140,.75);
-      background: rgba(85,134,140,.18);
-      box-shadow: 0 10px 22px rgba(22,21,19,.12);
+    border-color: rgba(38,255,230,.75);
+    background: rgba(38,255,230,.18);
+    box-shadow: 0 10px 22px rgba(22,21,19,.12);
     }
 
     .rightnote{
@@ -200,7 +205,7 @@
     }
 
     .card{
-      background: rgba(200,171,131,.62); /* tan */
+      background: rgba(58,190,255,.16); /* sky tint */
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:16px 16px 14px;
@@ -208,8 +213,8 @@
     }
 
     .card.soft{
-      background: rgba(255,255,255,.28);
-    }
+      background: rgba(255,255,255,.40);
+}
 
     .toprow{
       display:flex;
@@ -258,7 +263,7 @@
       padding:5px 9px;
       border-radius:999px;
       border:1px solid rgba(22,21,19,.18);
-      background: rgba(127,99,110,.18); /* rose */
+      background: rgba(216,71,151,.18); /* pink */
       color: rgba(22,21,19,.92);
     }
 
@@ -286,10 +291,118 @@
 
     /* focus */
     :focus-visible{
-      outline:3px solid rgba(85,134,140,.45);
+      outline:3px solid rgba(38,255,230,.55);
       outline-offset:3px;
       border-radius:12px;
     }
+
+    /* =========================
+   VALENTINE OVERRIDES
+   ========================= */
+
+:root{
+  --sage:#D2FDFF;     /* background now ICE */
+  --apricot:#D84797;  /* accent */
+  --tan:rgba(58,190,255,.14); /* cards tint */
+  --cyan:#820933;     /* links now MAROON */
+  --rose:#D84797;     /* chips/badges */
+
+  /* extra pops */
+  --sky:#3ABEFF;
+  --aqua:#26FFE6;
+}
+
+/* background */
+body{ background: var(--sage); }
+
+/* glow */
+body::before{
+  background:
+    radial-gradient(900px 420px at 50% -10%, rgba(216,71,151,.32), transparent 65%),
+    radial-gradient(720px 380px at 12% 2%, rgba(58,190,255,.22), transparent 62%),
+    radial-gradient(760px 420px at 94% 8%, rgba(38,255,230,.18), transparent 60%),
+    radial-gradient(520px 320px at 50% 92%, rgba(130,9,51,.10), transparent 60%);
+  opacity:.75;
+}
+
+/* links maroon */
+a{ color: var(--cyan); }
+a:hover{ text-decoration:underline; }
+
+/* title maroon */
+h1{
+  color: var(--cyan);
+  text-shadow: 0 12px 24px rgba(130,9,51,.10);
+}
+
+/* kicker heart */
+.kicker{
+  border-color: rgba(130,9,51,.20);
+  background: rgba(255,255,255,.48);
+}
+.kicker::before{
+  content:"♥";
+  color: var(--apricot);
+  margin-right: 2px;
+  opacity:.9;
+}
+
+/* nav ice glass */
+nav{
+  background: rgba(210,253,255,.86);
+  border-bottom: 1px solid rgba(130,9,51,.14);
+}
+
+/* buttons */
+.btn{
+  border-color: rgba(130,9,51,.16);
+  background: rgba(255,255,255,.45);
+}
+.btn:hover{
+  border-color: rgba(58,190,255,.70);
+  background: rgba(58,190,255,.14);
+  box-shadow: 0 10px 22px rgba(58,190,255,.12);
+}
+.btn.active{
+  border-color: rgba(38,255,230,.80);
+  background: rgba(38,255,230,.18);
+  box-shadow: 0 12px 26px rgba(38,255,230,.14);
+}
+
+/* cards */
+.card{
+  background: rgba(58,190,255,.14);
+  border-color: rgba(130,9,51,.14);
+}
+.card.soft{
+  background: rgba(255,255,255,.52);
+  border-color: rgba(130,9,51,.12);
+}
+
+/* badges */
+.badge{
+  color: rgba(130,9,51,.88);
+  border-color: rgba(216,71,151,.22);
+  background: rgba(216,71,151,.14);
+}
+
+/* chips */
+.chip{
+  border-color: rgba(216,71,151,.22);
+  background: rgba(216,71,151,.16);
+}
+.chip:hover{
+  background: rgba(216,71,151,.22);
+}
+
+/* section count */
+.count{ color: rgba(130,9,51,.65); }
+
+/* focus */
+:focus-visible{
+  outline: 3px solid rgba(38,255,230,.60);
+}
+
   </style>
 </head>
 
